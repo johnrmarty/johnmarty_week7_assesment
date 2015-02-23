@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'courses/index'
+
+  get 'users/show'
+
+  get 'users/new'
+
+  get 'users/edit'
+
+  get 'users/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
