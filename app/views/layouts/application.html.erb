@@ -9,17 +9,17 @@
 <body>
 
 <% if current_user.present? %>
-  <h3>**** Welcome <%= current_user.first_name %></h3> | <%=link_to 'Sign Out', logout_path %> 
+  <h3>**** Welcome <%= current_user.user_name %></h3> | <%=link_to 'Sign Out', logout_path %> 
 
   <% else %> 
-  <%= link_to "Sign In", login_path %> | <%= link_to "Register", users_new_path %>
+  <%= link_to "Sign In", login_path %> 
 
   <% end %> 
 
   <br>
   <br>
 
-<%=link_to "Home", root_path %> | <%=link_to "Courses", courses_index_path %> 
+<%=link_to "Home", root_path %> | <%=link_to "Courses", courses_path %> 
 
 <% if notice %>
 <h2><center><%= notice %></center></h2>

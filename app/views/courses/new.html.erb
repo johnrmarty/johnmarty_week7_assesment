@@ -1,0 +1,26 @@
+<h1> Create a course </h1>
+
+
+<%= render(:partial => "shared/errors", :locals => {:object => @course}) %> <br>
+<br>
+
+
+<%= form_for @course do |f| %>
+
+
+
+
+<table>
+	<tr>
+		<td><%= f.label :title %></td>
+		<td><%= f.text_field :title %></td>
+	</tr>
+	<tr>
+		<td><%= f.label :day_or_night %></td>
+		<td><%= f.text_field :day_or_night %></td>
+	</tr>
+		<td><%= f.submit %></td>
+	</tr>
+</table>
+
+<% end %>

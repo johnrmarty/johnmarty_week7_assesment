@@ -2,12 +2,15 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :sessions, only: [:create]
+  resources :courses
 
 get 'login' => 'sessions#new'
 get 'logout' => 'sessions#destroy'
 post '/login' => 'sessions#create'
 
-  get 'courses/index'
+  # get 'courses/index'
+  # get 'courses/new'
+  # get 'courses/show'
 
   get 'users/show'
 

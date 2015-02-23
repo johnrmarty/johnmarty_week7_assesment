@@ -1,5 +1,8 @@
 class CoursesController < ApplicationController
   
+	  before_action :user_logged_in!
+
+
 	  def index
 	  	@courses = Course.all
 	  end
@@ -11,7 +14,7 @@ class CoursesController < ApplicationController
 	  def create
 	  	@course = Course.new(course_params)
 	  	if @course.save
-	  			redirect_to courses_index_path, notice: 'course was sussessfully created!'
+	  			redirect_to courses_path, notice: 'course was sussessfully created!'
 	  		else 
 	  			render :new
 	  		end 
@@ -30,15 +33,16 @@ class CoursesController < ApplicationController
 	  	@course = Course.find(params[:id])
 	  	@course.destroy
 	  	redirect_to root_path, notice: "Course was successfully deleted"
+	  end 
 
 
 private
-	def user_params
+	def course_params
 		params.require(:course).permit(:title, :day_or_night)
 	end
 
 
-end 
+
 end 
 
 

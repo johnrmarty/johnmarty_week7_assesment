@@ -1,0 +1,9 @@
+<% if object.errors.any? %>
+  <h4><%= pluralize(object.errors.count, "error") %> prohibited this user from being created:</h4>
+
+  <ul>
+    <% object.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
