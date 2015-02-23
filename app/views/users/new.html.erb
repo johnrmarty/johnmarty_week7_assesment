@@ -1,2 +1,31 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1> please register </h1>
+
+<%= render(:partial => "shared/errors", :locals => {:object => @user}) %> <br>
+<br>
+
+<%= form_for @user do |f| %>
+
+
+<table>
+	<tr>
+		<td><%= f.label :user_name %></td>
+		<td><%= f.text_field :user_name %></td>
+	</tr>
+	<tr>
+		<td><%= f.label :about %></td>
+		<td><%= f.text_field :about %></td>
+	</tr>
+	<tr>
+		<td><%= f.label :password %></td>
+		<td><%= f.text_field :password %></td>
+	</tr>
+	<tr>
+		<td><%= f.label :password_confirmation %></td>
+		<td><%= f.text_field :password_confirmation %></td>
+	</tr>
+	<tr>
+		<td><%= f.submit %></td>
+	</tr>
+</table>
+
+<% end %>
