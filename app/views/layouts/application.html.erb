@@ -8,7 +8,31 @@
 </head>
 <body>
 
+<% if current_user.present? %>
+  <h3>**** Welcome <%= current_user.first_name %></h3> | <%=link_to 'Sign Out', logout_path %> 
+
+  <% else %> 
+  <%= link_to "Sign In", login_path %> | <%= link_to "Register", users_new_path %>
+
+  <% end %> 
+
+  <br>
+  <br>
+
+<%=link_to "Home", root_path %> | <%=link_to "List of manufacturers", manufacturers_path %> |  <%=link_to "About", about_index_path %> 
+
+<% if notice %>
+<h2><center><%= notice %></center></h2>
+<% end %>
+
+
+
+
+
 <%= yield %>
 
 </body>
 </html>
+
+
+
