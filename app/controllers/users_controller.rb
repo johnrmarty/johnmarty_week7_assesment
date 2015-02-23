@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 	if @user.save
 		flash[:notice] = "You are now a user!"
 		sign_in @user
-		redirect_to manufacturers_path
+		redirect_to courses_index_path
 	else
 		render :new
 	end 
